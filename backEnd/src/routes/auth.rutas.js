@@ -9,9 +9,9 @@ const router = Router();
 
 router.post('/login',async (req,res)=>{
 
-    const {user_name,pass} = req.body;
+    const {user_name,password} = req.body;
 
-    if (!user_name || !pass) {
+    if (!user_name || !password) {
         return res.status(400).json({mensaje:'No se permiten campos vacios'});
         
     }
@@ -27,7 +27,7 @@ router.post('/login',async (req,res)=>{
         
         const usuario = result.rows[0];
 
-        const ok = await bcrypt.compare(pass, usuario.pass);//comparamos que la contraseña ingresada con la encriptada de la BD
+        const ok = await bcrypt.compare(password, usuario.password);//comparamos que la contraseña ingresada con la encriptada de la BD
        
         if (!ok) {
             return res.status(404).json({mensaje:'Usuario o contraseña incorrectos'});
