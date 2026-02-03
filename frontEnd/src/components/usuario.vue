@@ -131,7 +131,7 @@ export default {
 
   async mounted() {
     const token = localStorage.getItem("token");
-    const res = await fetch("http://localhost:3000/api/usuarios", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/usuarios`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     this.usuarios = await res.json();
@@ -174,7 +174,7 @@ export default {
 
     async crearUsuario() {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:3000/api/usuarios", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/usuarios`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -203,7 +203,7 @@ export default {
       }
 
       const res = await fetch(
-        `http://localhost:3000/api/usuarios/${this.usuarioEditandoId}`,
+        `${import.meta.env.VITE_API_URL}/api/usuarios/${this.usuarioEditandoId}`,
         {
           method: "PUT",
           headers: {
@@ -228,7 +228,7 @@ export default {
       if (!confirm("¿Eliminar usuario?")) return;
 
       const token = localStorage.getItem("token");
-      await fetch(`http://localhost:3000/api/usuarios/${id}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/usuarios/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

@@ -151,7 +151,7 @@ export default {
   async mounted() {
     try {
       const token = localStorage.getItem("token");
-      const conexion = await fetch("http://localhost:3000/api/titular", {
+      const conexion = await fetch(`${import.meta.env.VITE_API_URL}/api/titular`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!conexion.ok) throw new Error();
@@ -171,7 +171,7 @@ export default {
     async crearTitular() {
       try {
         const token = localStorage.getItem("token");
-        const conexion = await fetch("http://localhost:3000/api/titular", {
+        const conexion = await fetch(`${import.meta.env.VITE_API_URL}/api/titular`, {
           method: "POST",
           headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
           body: JSON.stringify(this.nuevoTitular),
@@ -186,7 +186,7 @@ export default {
     async actualizarTitular() {
       try {
         const token = localStorage.getItem("token");
-        const conexion = await fetch(`http://localhost:3000/api/titular/${this.titularEditandoId}`, {
+        const conexion = await fetch(`${import.meta.env.VITE_API_URL}/api/titular/${this.titularEditandoId}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
           body: JSON.stringify(this.nuevoTitular),
@@ -202,7 +202,7 @@ export default {
       if (!confirm("¿Seguro que deseas eliminar este titular?")) return;
       try {
         const token = localStorage.getItem("token");
-        const conexion = await fetch(`http://localhost:3000/api/titular/${id}`, {
+        const conexion = await fetch(`${import.meta.env.VITE_API_URL}/api/titular/${id}`, {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },
         });

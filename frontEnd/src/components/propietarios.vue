@@ -164,7 +164,7 @@ export default {
   async mounted() {
     try {
       const token = localStorage.getItem('token')
-      const conexion = await fetch('http://localhost:3000/api/propietarios', {
+      const conexion = await fetch(`${import.meta.env.VITE_API_URL}/api/propietarios`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       if (!conexion.ok) throw new Error()
@@ -179,7 +179,7 @@ export default {
     async crearPropietario() {
       try {
         const token = localStorage.getItem("token")
-        const conexion = await fetch("http://localhost:3000/api/propietarios",{
+        const conexion = await fetch(`${import.meta.env.VITE_API_URL}/api/propietarios`,{
           method:'POST',
           headers:{
             "Content-Type" : "application/json",
@@ -200,7 +200,7 @@ export default {
     async actualizarPropietario() {
       try {
         const token = localStorage.getItem("token")
-        const conexion = await fetch(`http://localhost:3000/api/propietarios/${this.propietarioEditandoId}`, {
+        const conexion = await fetch(`${import.meta.env.VITE_API_URL}/api/propietarios/${this.propietarioEditandoId}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
           body: JSON.stringify(this.nuevoPropietario),
@@ -231,7 +231,7 @@ export default {
       if (!confirm("¿Seguro que deseas eliminar este propietario?")) return
       try {
         const token = localStorage.getItem("token")
-        const conexion = await fetch(`http://localhost:3000/api/propietarios/${id}`, { method: "DELETE", headers: { Authorization: `Bearer ${token}` } })
+        const conexion = await fetch(`${import.meta.env.VITE_API_URL}/api/propietarios/${id}`, { method: "DELETE", headers: { Authorization: `Bearer ${token}` } })
         if (!conexion.ok) throw new Error("Error al eliminar")
         this.propietarios = this.propietarios.filter(p => p.id_propietario !== id)
       } catch (err) {

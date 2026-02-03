@@ -189,7 +189,7 @@ export default {
   async mounted() {
     try {
       const token = localStorage.getItem("token");
-      const conexion = await fetch("http://localhost:3000/api/locales", {
+      const conexion = await fetch(`${import.meta.env.VITE_API_URL}/api/locales`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!conexion.ok) throw new Error();
@@ -226,7 +226,7 @@ export default {
     async crearLocal() {
       try {
         const token = localStorage.getItem("token");
-        const conexion = await fetch("http://localhost:3000/api/locales", {
+        const conexion = await fetch(`${import.meta.env.VITE_API_URL}/api/locales`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -253,7 +253,7 @@ export default {
     async actualizarLocal() {
       try {
         const token = localStorage.getItem("token");
-        const conexion = await fetch(`http://localhost:3000/api/locales/${this.localEditandoId}`, {
+        const conexion = await fetch(`${import.meta.env.VITE_API_URL}/api/locales/${this.localEditandoId}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
           body: JSON.stringify(this.nuevoLocal),
@@ -275,7 +275,7 @@ export default {
       if (!confirm("¿Seguro que deseas eliminar este local?")) return;
       try {
         const token = localStorage.getItem("token");
-        const conexion = await fetch(`http://localhost:3000/api/locales/${id}`, {
+        const conexion = await fetch(`${import.meta.env.VITE_API_URL}/api/locales/${id}`, {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },
         });
