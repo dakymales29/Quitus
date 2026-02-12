@@ -1,4 +1,13 @@
 <template>
+  <div class="
+           bg-gradient-to-r from-blue-500 to-purple-600
+           px-4">
+    <p class="text-2xl sm:text-3xl
+               font-bold  text-gray-800 ">Usuarios</p>
+    <p class="font-bold">admin1 - 123456</p>
+    <p class="font-bold">invitado - 123</p>
+    <p class="font-bold">secretaria - 123</p>
+  </div>
   <div
     class="min-h-screen flex items-center justify-center
            bg-gradient-to-r from-blue-500 to-purple-600
