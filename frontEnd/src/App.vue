@@ -13,15 +13,10 @@ import { ref, onMounted } from 'vue'
 import Preloader from './components/preloader.vue'
 
 const loading = ref(true)
-const API_URL = import.meta.env.VITE_API_URL
 
-onMounted(async () => {
-  try {
-    await fetch(`${API_URL}/api/citas`) // o /health si tienes
-  } catch (e) {
-    // da igual si falla
-  } finally {
+onMounted(() => {
+  setTimeout(() => {
     loading.value = false
-  }
+  }, 800)
 })
 </script>
