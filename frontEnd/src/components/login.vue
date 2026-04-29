@@ -86,8 +86,8 @@ methods:{
         'Content-Type' : 'application/json',
       },
       body: JSON.stringify({
-        user_name:this.user_name,
-        pass:this.password
+         user_name: this.user_name,
+  password: this.password
       })
     })
     const datos = await respuesta.json()
