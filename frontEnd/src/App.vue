@@ -1,11 +1,6 @@
 <template>
-  <!-- PRELOADER -->
   <Preloader v-if="loading" />
-
-  <!-- APP -->
-  <div v-else>
-    <router-view />
-  </div>
+  <router-view v-else />
 </template>
 
 <script setup>
@@ -14,18 +9,9 @@ import Preloader from './components/preloader.vue'
 
 const loading = ref(true)
 
-onMounted(async () => {
-  try {
-    // aquí defines "cuando la app está lista"
-    
-    // ejemplo 1: esperar router (mínimo)
-    await new Promise(resolve => requestAnimationFrame(resolve))
-
-    // ejemplo 2 (MEJOR): esperar datos iniciales si tienes API global
-    // await fetch(API_URL + "/health")
-
-  } finally {
+onMounted(() => {
+  setTimeout(() => {
     loading.value = false
-  }
+  }, 500)
 })
 </script>
