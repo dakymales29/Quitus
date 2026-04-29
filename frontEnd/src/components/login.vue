@@ -1,72 +1,48 @@
 <template>
-  <div class="
-           bg-gradient-to-r from-blue-500 to-purple-600
-           px-4">
-    <p class="text-2xl sm:text-3xl
-               font-bold  text-gray-800 ">Usuarios</p>
-    <p class="font-bold">admin1 - 123456</p>
-    <p class="font-bold">invitado - 123</p>
-    <p class="font-bold">secretaria - 123</p>
-  </div>
   <div
     class="min-h-screen flex items-center justify-center
            bg-gradient-to-r from-blue-500 to-purple-600
            px-4"
   >
-    <!-- Card del login -->
     <div
       class="bg-white rounded-2xl shadow-xl
              p-6 sm:p-8 md:p-10
              w-full max-w-md"
     >
-      <h1
-        class="text-2xl sm:text-3xl
-               font-bold text-center text-gray-800 mb-6"
-      >
+
+      <h1 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-4">
         Bienvenido
       </h1>
 
-      <!-- Formulario -->
+      <!-- USUARIOS DEMO -->
+      <div class="mb-6 text-sm text-gray-600 bg-gray-100 p-3 rounded-lg">
+        <p class="font-bold">Usuarios demo:</p>
+        <p>admin1 - 123456</p>
+        <p>invitado - 123</p>
+        <p>secretaria - 123</p>
+      </div>
+
+      <!-- FORM -->
       <form class="space-y-5" @submit.prevent="handleLogin">
 
-        <!-- Usuario -->
-        <div>
-          <label class="block text-gray-700 mb-2 text-sm sm:text-base">
-            Usuario
-          </label>
-          <input
-            v-model="user_name"
-            placeholder="usuario"
-            class="w-full px-4 py-2 sm:py-3
-                   rounded-xl border border-gray-300
-                   focus:outline-none focus:ring-2 focus:ring-blue-400"
-            required
-          />
-        </div>
+        <input
+          v-model="user_name"
+          placeholder="usuario"
+          class="w-full px-4 py-2 rounded-xl border"
+          required
+        />
 
-        <!-- Password -->
-        <div>
-          <label class="block text-gray-700 mb-2 text-sm sm:text-base">
-            Contraseña
-          </label>
-          <input
-            v-model="password"
-            type="password"
-            placeholder="••••••••"
-            class="w-full px-4 py-2 sm:py-3
-                   rounded-xl border border-gray-300
-                   focus:outline-none focus:ring-2 focus:ring-blue-400"
-            required
-          />
-        </div>
+        <input
+          v-model="password"
+          type="password"
+          placeholder="••••••••"
+          class="w-full px-4 py-2 rounded-xl border"
+          required
+        />
 
-        <!-- Botón -->
         <button
           type="submit"
-          class="w-full py-2.5 sm:py-3
-                 bg-blue-500 text-white
-                 font-bold rounded-xl
-                 hover:bg-blue-600 transition-colors"
+          class="w-full py-3 bg-blue-500 text-white font-bold rounded-xl"
         >
           Iniciar sesión
         </button>
