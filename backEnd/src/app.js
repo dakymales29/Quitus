@@ -7,6 +7,7 @@ import titularesRutas from './routes/titular.rutas.js';
 import propietariosArriendoRutas from './routes/propietarios.arriendo.js';
 import usuariosRutas from './routes/usuarios.rutas.js';
 import login from './routes/auth.rutas.js';
+import loader from './routes/loader.js';
 dotenv.config();//con esto cargamos las variables de nuestro .env
 
 const app = express();//para usar express en mi servidor
@@ -25,6 +26,8 @@ app.use('/api', propietariosArriendoRutas);
 app.use('/api',usuariosRutas);
 //ruta login
 app.use('/api', login);
+//ruta loader
+app.use('/api',loader);
 
 // ruta prueba
 app.get('/', (req, res) => {
