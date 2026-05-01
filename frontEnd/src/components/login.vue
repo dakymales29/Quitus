@@ -17,6 +17,23 @@
       >
         Bienvenido
       </h1>
+      <div class="mb-6 p-4 rounded-xl bg-yellow-50 border border-yellow-200 text-sm text-gray-700">
+
+  <p class="font-bold text-yellow-700 mb-2">
+    ⚠️ Versión de demostración
+  </p>
+
+  <p class="mb-3">
+    Este sistema es una versión de prueba. Puedes usar las siguientes credenciales para ingresar:
+  </p>
+
+  <ul class="space-y-1">
+    <li><span class="font-semibold">Administrador:</span> admin1 / 123456</li>
+    <li><span class="font-semibold">Invitado:</span> invitado / 123</li>
+    <li><span class="font-semibold">Secretaria:</span> secretaria / 123</li>
+  </ul>
+
+</div>
 
       <!-- Formulario -->
       <form class="space-y-5" @submit.prevent="handleLogin">
