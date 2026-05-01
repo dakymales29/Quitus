@@ -4,9 +4,9 @@
     <!-- SIDEBAR -->
     <aside
       class="w-full md:w-64
-             bg-gradient-to-b from-indigo-600 to-purple-700
-             text-white flex md:flex-col"
-    >
+         bg-gradient-to-b from-indigo-600 to-purple-700
+         text-white flex flex-col
+         md:h-screen">
 
       <!-- HEADER -->
       <div class="p-4 md:p-6 text-center border-b border-white/20">
@@ -19,10 +19,7 @@
 
       <!-- NAV -->
       <nav
-        class="flex md:flex-col
-               flex-row gap-2
-               overflow-x-auto md:overflow-visible
-               p-3 md:p-4 flex-1"
+        class="flex flex-col gap-2 p-3 md:p-4 overflow-y-auto"
       >
 
         <!-- SUPER: todo -->
