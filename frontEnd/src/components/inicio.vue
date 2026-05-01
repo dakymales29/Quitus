@@ -20,9 +20,9 @@
       <!-- NAV -->
       <nav
         class="flex md:flex-col
-               flex-row gap-2
-               overflow-x-auto md:overflow-visible
-               p-3 md:p-4 flex-1"
+         flex-col
+         gap-2
+         p-3 md:p-4 flex-1"
       >
 
         <!-- SUPER: todo -->
