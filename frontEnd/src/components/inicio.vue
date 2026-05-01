@@ -4,9 +4,9 @@
     <!-- SIDEBAR -->
     <aside
       class="w-full md:w-64
-         bg-gradient-to-b from-indigo-600 to-purple-700
+         bg-gradient-to-b from-indigo-500 via-indigo-600 to-purple-700
          text-white flex flex-col
-         md:h-screen">
+         md:min-h-screen">
 
       <!-- HEADER -->
       <div class="p-4 md:p-6 text-center border-b border-white/20">
