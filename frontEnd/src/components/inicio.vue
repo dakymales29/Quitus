@@ -4,8 +4,8 @@
     <!-- SIDEBAR -->
     <aside
       class="w-full md:w-64
-         bg-gradient-to-b from-indigo-600 to-purple-700
-         text-white flex flex-col h-screen"
+             bg-gradient-to-b from-indigo-600 to-purple-700
+             text-white flex md:flex-col"
     >
 
       <!-- HEADER -->
@@ -19,7 +19,10 @@
 
       <!-- NAV -->
       <nav
-        class="flex flex-col gap-2 p-3 md:p-4 overflow-y-auto"
+        class="flex md:flex-col
+               flex-row gap-2
+               overflow-x-auto md:overflow-visible
+               p-3 md:p-4 flex-1"
       >
 
         <!-- SUPER: todo -->
@@ -47,7 +50,7 @@
       </nav>
 
       <!-- LOGOUT -->
-      <div class="p-3 md:p-4 border-t border-white/20 mt-auto">
+      <div class="p-3 md:p-4 border-t border-white/20">
         <button
           @click="logout"
           class="w-full bg-red-500 hover:bg-red-600 transition
